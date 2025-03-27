@@ -1,0 +1,132 @@
+/* общие стили */
+body {
+    background-color: RGB(220, 220, 220);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: black;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+
+nav a {
+    margin-left: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+.current-page {
+    font-weight: 700;
+    color: red;
+}
+
+/* index.html */
+.name {
+    display: flex;
+    align-items: center;
+}
+
+.name-image {
+    --scale: 200px;
+    width: var(--scale);
+    height: var(--scale);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+}
+
+.post {
+    margin-right: 40px;
+}
+
+.all-posts {
+    color: black;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.feature-work {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.feature-work-content {
+    flex: 1;
+    text-align: justify;
+    margin-right: 20px;
+}
+
+.feature-work-img {
+    --size: 150px;
+    width: calc(var(--size) * 1.5);
+    height: var(--size);
+    margin-right: 20px;
+}
+
+/* work.html */
+.blog-content {
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.blog-time {
+    display: flex;
+}
+
+.date {
+    margin-right: 20px;
+    color: black;
+}
+
+.category {
+    margin-left: 20px;
+    color: grey;
+}
+
+.blog-href {
+    text-decoration: none;
+}
+
+.license {
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px;
+}
+
+.social-media img {
+    margin: 0 20px;
+    width: 50px;
+    height: auto;
+}
