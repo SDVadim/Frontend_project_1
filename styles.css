@@ -1,22 +1,30 @@
 /* общие стили */
+
 body {
-    background-color: #edf2f7;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-image: url("img/v617batch2-bb-02-technology.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     line-height: 1.6;
     color: black;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
-    font-size: 20px;
-
+    font-size: 25px;
 }
 
 .container {
-    background-color: white;
+    padding: 30px 40px;
+    background-color: lightsteelblue;
     border-radius: 5px;
-    padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 50px;
 }
 
 h2 {
@@ -28,19 +36,16 @@ h2 {
 nav {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     margin-right: 20px;
+    border-bottom: 3px solid black;
 }
 
 nav a {
     margin-left: 20px;
     color: black;
     font-weight: 500;
-}
-
-.current-page {
-    font-weight: 700;
-    color: red;
+    text-decoration: none;
 }
 
 /* index.html */
@@ -50,11 +55,30 @@ nav a {
 }
 
 .name-image {
-    --scale: 200px;
+    --scale: 450px;
     width: var(--scale);
     height: var(--scale);
     border-radius: 50%;
     margin-right: 20px;
+    margin-left: 40px;
+}
+
+.resume-btn {
+    display: flex;
+    margin: 0 auto;
+    background-color: rgb(0, 42, 74);
+    padding: 20px 40px;
+    border-radius: 4px;
+}
+
+.resume-btn:active {
+    transform: scale(0.95);
+}
+
+.resume-btn-href {
+    color: lightsteelblue;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .posts {
@@ -65,6 +89,19 @@ nav a {
 
 .post {
     margin-right: 40px;
+    border: 2px solid rgb(0, 42, 74);
+    border-radius: 10px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.post:hover {
+    border: 4px solid rgb(0, 42, 74);
+}
+
+.post:active {
+    scale: 0.95;
 }
 
 .all-posts {
@@ -76,19 +113,37 @@ nav a {
 .feature-work {
     display: flex;
     margin-bottom: 40px;
+    border: 2px solid black;
+    padding: 20px 20px;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.feature-work:hover {
+    border: 4px solid rgb(0, 42, 74);;
+}
+
+.feature-work:active {
+    transform: scale(0.95);
 }
 
 .feature-work-content {
     flex: 1;
     text-align: justify;
     margin-right: 20px;
+    margin-top: -30px;
 }
 
 .feature-work-img {
-    --size: 150px;
+    --size: 200px;
     width: calc(var(--size) * 1.5);
     height: var(--size);
     margin-right: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
 }
 
 /* blog.html */
