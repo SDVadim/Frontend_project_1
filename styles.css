@@ -1,13 +1,13 @@
 /* общие стили */
 
-body {
-    background-image: url("img/v617batch2-bb-02-technology.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+html, body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("img/v617batch2-bb-02-technology.jpg");
     color: black;
     max-width: 1300px;
     margin: 0 auto;
@@ -18,7 +18,7 @@ body {
 .container {
     padding: 30px 40px;
     background-color: lightsteelblue;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -36,17 +36,62 @@ h2 {
 nav {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-right: 20px;
-    border-bottom: 3px solid black;
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 15px;
+    text-decoration: none;
     color: black;
     font-weight: 500;
-    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #5d82b8;
+    background-color: #5d82b8;
 }
+
+nav a:hover {
+    background-color: #4a6ea0;
+    transform: translateY(2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav a.current-page {
+    background-color: #3a5a8c;
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.divider-nav {
+    border-top: 4px solid black;
+    margin: 10px auto;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media img {
+    margin: 0 10px;
+    width: 50px;
+    height: auto;
+    filter:
+        brightness(0) saturate(100%)
+        invert(88%) sepia(15%) saturate(800%)
+        hue-rotate(180deg) brightness(95%) contrast(86%);
+}
+
+.license {
+    text-align: center;
+    color: lightsteelblue;
+}
+
+.media {
+    padding: 10px;
+}
+
 
 /* index.html */
 .name {
@@ -69,16 +114,23 @@ nav a {
     background-color: rgb(0, 42, 74);
     border-radius: 10px;
     padding: 20px 40px;
+    color: lightsteelblue;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.resume-btn.myself {
+    margin: 50px 0 0 0;
+}
+
+.continue-read {
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
 }
 
 .resume-btn:active {
     transform: scale(0.95);
-}
-
-.resume-btn-href {
-    color: lightsteelblue;
-    text-decoration: none;
-    font-size: 20px;
 }
 
 .posts {
@@ -98,6 +150,7 @@ nav a {
 
 .post:hover {
     border: 4px solid rgb(0, 42, 74);
+    transition: 0.1s;
 }
 
 .post:active {
@@ -121,7 +174,8 @@ nav a {
 }
 
 .feature-work:hover {
-    border: 4px solid rgb(0, 42, 74);;
+    border: 4px solid rgb(0, 42, 74);
+    transition: 0.1s;
 }
 
 .feature-work:active {
@@ -143,17 +197,68 @@ nav a {
 }
 
 .contact-form {
-    max-width: 600px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-form input, textarea {
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 8px;
+    width: 100%;
+    background-color: transparent;
+    font-size: 25px;
+}
+
+.contact-form textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.contact-form input:focus {
+    outline: none;
+}
+
+.contact-form-btn {
+    background-color: rgb(0, 42, 74);
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 25px;
+    color: lightsteelblue;
+}
+
+.contact-form-btn:active {
+    transform: scale(0.95);
 }
 
 /* blog.html */
 .blog-content {
-    border-bottom: 2px solid black;
     padding-bottom: 10px;
+}
+
+.blog-href {
+    text-decoration: none;
+    color: black;
+}
+
+.blog-content:hover {
+    transform: scale(0.95);
+    transition: 1s;
 }
 
 .blog-time {
     display: flex;
+}
+
+.divider {
+    border-top: 2px solid black;
+    margin: 10px auto;
 }
 
 .date {
@@ -166,22 +271,66 @@ nav a {
     color: grey;
 }
 
-.blog-href {
-    text-decoration: none;
-}
-
-.license {
-    text-align: center;
-}
-
-.social-media {
+/*AboutMyself*/
+.description {
     display: flex;
-    justify-content: center;
-    margin: 40px 0 20px;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
-.social-media img {
-    margin: 0 20px;
-    width: 50px;
-    height: auto;
+.resume {
+    margin-top: 10px;
+    flex: 2;
+}
+
+.stack-tech {
+    padding: 0 20px
+}
+
+.skill-table {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.skill-table li {
+    background-color: lightsteelblue;
+    border: 5px solid rgb(0, 42, 74);
+    padding: 10px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    color: black;
+}
+
+.study {
+    margin-top: 100px;
+}
+
+.work-history {
+    margin-top: 60px;
+}
+
+.work-item {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.work-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.work-year {
+    display: inline-block;
+    background-color: rgb(0, 42, 74);
+    color: lightsteelblue;
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.work-company {
+    font-weight: 500;
 }

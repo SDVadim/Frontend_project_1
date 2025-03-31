@@ -10,18 +10,18 @@
     <div class="container">
         <nav>
             <a href="blog.html">Блог</a>
-            <a href="work.html">Работа</a>
+            <a href="AboutMyself.html">Обо мне</a>
         </nav>
-        <br>
-
+        <div class="divider-nav"></div>
         <div class="name">
             <div>
                 <h1>Привет, меня зовут [Имя]
                 <br>Я начинающий программист</h1>
                 <p>
-                    Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования.
+                    Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования
+                    <a class="continue-read" href="AboutMyself.html">...</a>
                 </p>
-                <button class="resume-btn"><a class="resume-btn-href" href="">Прочитать резюме</a></button>
+                <button class="resume-btn">Прочитать резюме</button>
             </div>
             <img class="name-image" src="img/avatar.png" alt="avatar">
         </div>
@@ -88,16 +88,28 @@
 
     <div class="container">
         <h2>Обратная связь</h2>
-        <div class="contact-form">
-
-        </div>
+        <form action="#" method="POST">
+            <div class="contact-form">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="contact-form">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="contact-form">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="contact-form-btn">Отправить</button>
+        </form>
     </div>
 
-    <div>
+    <div class="media">
         <div class="social-media">
-            <a href="https://github.com/"><img class="" src="img/github.png" alt="github"></a>
-            <a href="https://www.instagram.com/"><img src="img/instagram.png" alt="instagram"></a>
-            <a href="https://x.com/"><img src="img/twitter.png" alt="twitter"></a>
+            <a href="https://github.com/"><img class="media" src="img/github.png" alt="github"></a>
+            <a href="https://www.instagram.com/"><img class="media" src="img/instagram.png" alt="instagram"></a>
+            <a href="https://x.com/"><img class="media" src="img/twitter.png" alt="twitter"></a>
         </div>
         <p class="license">Лицензия</p>
     </div>
