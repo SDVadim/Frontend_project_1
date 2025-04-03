@@ -569,3 +569,27 @@ nav a.current-page {
         height: 200px;
     }
 }
+
+@media (max-width: 400px) {
+    html, body {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .name-image {
+        width: 180px;
+        height: 180px;
+    }
+}
