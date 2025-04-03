@@ -113,14 +113,29 @@ nav a.current-page {
 .name {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Распределяем пространство между текстом и изображением */
+    position: relative; /* Добавляем для контроля позиционирования */
+    overflow: hidden; /* Предотвращаем выход содержимого за границы */
+    width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
 }
 
+/* Обновляем стили для изображения */
 .name-image {
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-left: 40px;
+    width: 450px; /* Уменьшаем базовый размер */
+    height: auto;
+    margin: 0; /* Убираем отступы, которые могут вызывать проблемы */
+    object-fit: cover;
+    flex-shrink: 0; /* Предотвращаем сжатие изображения */
+    max-width: 40%;
+    max-height: 40%;/* Ограничиваем максимальную ширину относительно контейнера */
+    box-sizing: border-box; /* Учитываем границы в общей ширине */
+}
+
+/* Обновляем стили для текстового контейнера */
+.name div {
+    flex: 1; /* Позволяем текстовому блоку занимать доступное пространство */
+    padding-right: 20px; /* Добавляем отступ от изображения */
+    max-width: 60%; /* Ограничиваем максимальную ширину */
 }
 
 .resume-btn {
@@ -350,34 +365,23 @@ nav a.current-page {
     font-weight: 500;
 }
 
-
-/* Для промежуточных размеров между десктопом и планшетом */
-@media (max-width: 1200px) and (min-width: 993px) {
+@media (max-width: 1200px) and (min-width: 901px) {
     .name-image {
-        width: 400px;
-        height: 400px;
-        margin-left: 30px;
+        width: 350px;
+        height: 350px;
+        margin: auto;
     }
 
     .name {
         align-items: flex-start;
     }
-}
 
-/* Для промежуточных размеров между планшетом и мобильным */
-@media (max-width: 850px) and (min-width: 769px) {
-    .name-image {
-        width: 300px;
-        height: 300px;
-        margin-left: 15px;
-    }
-
-    .name {
-        align-items: center;
+    .name div {
+        max-width: 55%;
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
     html, body {
         font-size: 20px;
         padding: 15px;
@@ -395,9 +399,15 @@ nav a.current-page {
         padding: 25px 30px;
     }
 
+    .name {
+        flex-direction: column-reverse;
+        text-align: center;
+        max-weight: 100%;
+    }
+
     .name-image {
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
         margin-left: 20px;
     }
 
@@ -417,8 +427,16 @@ nav a.current-page {
     }
 }
 
-/* Для мобильных устройств */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+    .name-image {
+        width: 250px;
+        height: 250px;
+        max-width: 30%;
+    }
+
+}
+
+@media (max-width: 750px) {
     html, body {
         font-size: 18px;
         padding: 10px;
@@ -430,7 +448,6 @@ nav a.current-page {
 
     h2 {
         font-size: 24px;
-        flex-direction: column;
         align-items: flex-start;
     }
 
@@ -438,7 +455,6 @@ nav a.current-page {
         padding: 20px;
     }
 
-    /* Навигация */
     nav {
         flex-direction: column;
         align-items: center;
@@ -461,19 +477,22 @@ nav a.current-page {
         padding: 6px 8px;
     }
 
-    /* Секция с именем */
     .name {
         flex-direction: column-reverse;
         text-align: center;
+    }
+
+    .name div {
+        max-width: 80%;
     }
 
     .name-image {
         width: 250px;
         height: 250px;
         margin: 0 0 20px 0;
+        max-width: 100%;
     }
 
-    /* Посты */
     .posts {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -488,14 +507,12 @@ nav a.current-page {
         margin: 10px 0;
     }
 
-    /* Работы */
     .feature-work {
         flex-direction: column;
         align-items: center;
     }
 
     .feature-work-img {
-        --size: 180px;
         width: 100%;
         max-width: 300px;
         height: auto;
@@ -507,7 +524,6 @@ nav a.current-page {
         text-align: center;
     }
 
-    /* Кнопки */
     .resume-btn {
         margin: 20px auto;
         padding: 12px 25px;
@@ -524,7 +540,6 @@ nav a.current-page {
         font-size: 18px;
     }
 
-    /* Обо мне */
     .description {
         flex-direction: column;
     }
@@ -542,9 +557,15 @@ nav a.current-page {
         margin-top: 40px;
     }
 
-    /* Опыт работы */
     .work-meta {
         flex-wrap: wrap;
         gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .name-image {
+        width: 200px;
+        height: 200px;
     }
 }
