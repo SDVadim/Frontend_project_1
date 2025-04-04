@@ -12,7 +12,7 @@ html, body {
     background-repeat: no-repeat;
     background-image: url("img/v617batch2-bb-02-technology.webp");
     color: black;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
     font-size: 25px;
@@ -20,7 +20,7 @@ html, body {
 
 .container {
     padding: 30px 40px;
-    max-width: 1000px;
+    max-width: 1300px;
     background-color: lightsteelblue;
     border-radius: 8px;
     margin-bottom: 20px;
