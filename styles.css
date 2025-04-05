@@ -109,33 +109,32 @@ nav a.current-page {
 }
 
 
-/* index.html */
+
 .name {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Распределяем пространство между текстом и изображением */
-    position: relative; /* Добавляем для контроля позиционирования */
-    overflow: hidden; /* Предотвращаем выход содержимого за границы */
-    width: 100%; /* Убедимся, что контейнер занимает всю доступную ширину */
+    justify-content: space-between;
+
+    width: 100%;
 }
 
-/* Обновляем стили для изображения */
+
 .name-image {
-    width: 450px; /* Уменьшаем базовый размер */
+    width: 450px;
     height: auto;
-    margin: 0; /* Убираем отступы, которые могут вызывать проблемы */
+    margin: 0;
     object-fit: cover;
-    flex-shrink: 0; /* Предотвращаем сжатие изображения */
+    flex-shrink: 0;
     max-width: 40%;
-    max-height: 40%;/* Ограничиваем максимальную ширину относительно контейнера */
-    box-sizing: border-box; /* Учитываем границы в общей ширине */
+    max-height: 40%;
+    box-sizing: border-box;
 }
 
-/* Обновляем стили для текстового контейнера */
+
 .name div {
-    flex: 1; /* Позволяем текстовому блоку занимать доступное пространство */
-    padding-right: 20px; /* Добавляем отступ от изображения */
-    max-width: 60%; /* Ограничиваем максимальную ширину */
+    flex: 1;
+    padding-right: 20px;
+    max-width: 60%;
 }
 
 .resume-btn {
