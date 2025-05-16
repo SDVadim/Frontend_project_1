@@ -428,17 +428,30 @@ nav a.current-page {
     visibility: hidden;
 }
 
-/* Стили для модального окна формы */
+/* Ограничиваем размеры модального окна */
 #feedbackModal .modal-content {
-    max-width: 600px;
+    max-width: 500px; /* Ограничиваем ширину */
+    max-height: 90vh; /* Ограничиваем высоту */
+    overflow-y: auto; /* Добавляем прокрутку, если содержимое превышает высоту */
+    margin: 0 auto; /* Центрируем */
+    padding: 20px; /* Добавляем отступы */
+    box-sizing: border-box; /* Учитываем отступы и границы */
 }
 
-#feedbackModal .contact-form {
-    margin-bottom: 20px;
+/* Исправляем поля формы */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Поля занимают всю ширину контейнера */
+    box-sizing: border-box; /* Учитываем отступы и границы */
+    margin-bottom: 15px; /* Отступ между элементами */
 }
 
-#feedbackModal .contact-form-btn {
-    width: 100%;
+/* Кнопка отправки */
+.contact-form-btn {
+    display: block;
+    width: auto; /* Убираем растягивание кнопки */
+    margin: 20px auto 0; /* Центрируем кнопку */
+    padding: 10px 20px; /* Добавляем отступы */
 }
 
 /* Стили для таймера обратного отсчета */
