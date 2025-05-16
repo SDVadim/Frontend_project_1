@@ -19,6 +19,7 @@
     <link rel="icon" href="img/avatar.webp" type="image/webp">
 </head>
 <body>
+<header id="header">
     <div class="container">
         <nav>
             <div class="nav-logo">
@@ -26,89 +27,149 @@
             </div>
             <div class="nav-pages">
                 <a href="blog.html">Блог</a>
-                <a class="current-page" href="AboutMyself.html">Обо мне</a>
+                <a href="AboutMyself.html" class="current-page">Обо мне</a>
+                <a href="#" id="openFeedbackBtn">Контакты</a>
             </div>
         </nav>
         <div class="divider-nav"></div>
+    </div>
+</header>
 
-        <h1>Обо мне</h1>
-        <h2>Привет, меня зовут [Имя]
-            <br>Я начинающий программист</h2>
-        <div class="description">
-            <div class="resume">
-                <p>
-                    Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-                <h3 class="study">Образование</h3>
-                <strong>Бакалавр информационных технологий</strong><br>
-                Московский Физико-Технический Институт<br>
-                2000-2004
+<div class="container">
+    <h1>Обо мне</h1>
+    <h2>Привет, меня зовут [Имя]
+        <br>Я начинающий программист</h2>
+    <div class="description">
+        <div class="resume">
+            <p>
+                Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
+            <h3 class="study">Образование</h3>
+            <strong>Бакалавр информационных технологий</strong><br>
+            Московский Физико-Технический Институт<br>
+            2000-2004
+            <button class="resume-btn myself">Прочитать резюме</button>
+        </div>
 
-                <button class="resume-btn myself">Прочитать резюме</button>
-            </div>
-
-            <div class="stack-tech">
-                <h3>Навыки</h3>
-                <ul class="skill-table">
-                    <li>HTML5 & CSS</li>
-                    <li>JavaScript / TypeScript</li>
-                    <li>UI/UX Дизайн</li>
-                    <li>Git</li>
-                </ul>
-            </div>
+        <div class="stack-tech">
+            <h3>Навыки</h3>
+            <ul class="skill-table">
+                <li>HTML5 & CSS</li>
+                <li>JavaScript / TypeScript</li>
+                <li>UI/UX Дизайн</li>
+                <li>Git</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <h2>Опыт работы</h2>
-        <div class="work-item">
-            <h3>Ведущий фронтенд-разработчик</h3>
-            <div class="work-meta">
-                <span class="work-year">2020-2023</span>
-                <span class="work-company">Технологии Будущего</span>
-            </div>
-            <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                Руководил командой из 5 разработчиков, отвечал за архитектуру фронтенда и внедрение новых технологий.
-            </p>
+<div class="container">
+    <h2>Обратный отсчет до получения диплома</h2>
+    <div class="countdown-timer">
+        <div class="countdown-item">
+            <span id="years">00</span>
+            <span class="label">Года</span>
         </div>
-        <div class="divider"></div>
-        <div class="work-item">
-            <h3>UI/UX Дизайнер</h3>
-            <div class="work-meta">
-                <span class="work-year">2018-2020</span>
-                <span class="work-company">Креативная Студия</span>
-            </div>
-            <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                Создавал пользовательские интерфейсы для веб-приложений и мобильных приложений.
-            </p>
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <span class="label">Дней</span>
         </div>
-        <div class="divider"></div>
-        <div class="work-item">
-            <h3>Веб-разработчик</h3>
-            <div class="work-meta">
-                <span class="work-year">2017-2018</span>
-                <span class="work-company">Диджитал Агентство</span>
-            </div>
-            <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                Разрабатывал и поддерживал веб-сайты для клиентов из различных отраслей.
-            </p>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <span class="label">Часов</span>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <span class="label">Минут</span>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <span class="label">Секунд</span>
         </div>
     </div>
+</div>
 
-    <div class="media">
-        <div class="social-media">
-            <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
-            <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
-            <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
+<div class="container">
+    <h2>Опыт работы</h2>
+    <div class="work-item">
+        <h3>Ведущий фронтенд-разработчик</h3>
+        <div class="work-meta">
+            <span class="work-year">2020-2023</span>
+            <span class="work-company">Технологии Будущего</span>
         </div>
-        <p class="license">Лицензия</p>
+        <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            Руководил командой из 5 разработчиков, отвечал за архитектуру фронтенда и внедрение новых технологий.
+        </p>
     </div>
+    <div class="divider"></div>
+    <div class="work-item">
+        <h3>UI/UX Дизайнер</h3>
+        <div class="work-meta">
+            <span class="work-year">2018-2020</span>
+            <span class="work-company">Креативная Студия</span>
+        </div>
+        <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            Создавал пользовательские интерфейсы для веб-приложений и мобильных приложений.
+        </p>
+    </div>
+    <div class="divider"></div>
+    <div class="work-item">
+        <h3>Веб-разработчик</h3>
+        <div class="work-meta">
+            <span class="work-year">2017-2018</span>
+            <span class="work-company">Диджитал Агентство</span>
+        </div>
+        <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+            Разрабатывал и поддерживал веб-сайты для клиентов из различных отраслей.
+        </p>
+    </div>
+</div>
+
+<div class="media">
+    <div class="social-media">
+        <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
+        <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
+        <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
+    </div>
+    <p class="license">Лицензия</p>
+</div>
+
+<div class="modal" id="feedbackModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Обратная связь</h2>
+        <form id="feedbackForm" action="#" method="POST">
+            <div class="contact-form">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message" id="phoneError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
+            <button type="submit" id="submitBtn" class="contact-form-btn">Отправить</button>
+        </form>
+    </div>
+</div>
+<script src="scriptAboutMyself.js"></script>
 </body>
 </html>
