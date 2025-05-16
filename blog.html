@@ -19,74 +19,112 @@
     <link rel="icon" href="img/avatar.webp" type="image/webp">
 </head>
 <body>
+<header id="header">
     <div class="container">
         <nav>
             <div class="nav-logo">
                 <a href="index.html"><img class="logo" src="img/avatar.webp" alt="logo"></a>
             </div>
             <div class="nav-pages">
-                <a class="current-page" href="blog.html">Блог</a>
+                <a href="blog.html" class="current-page">Блог</a>
                 <a href="AboutMyself.html">Обо мне</a>
+                <a href="#" id="openFeedbackBtn">Контакты</a>
             </div>
         </nav>
         <div class="divider-nav"></div>
-        <div>
-            <h1>Блог</h1>
-            <a class="blog-href" href="">
-                <div class="blog-content">
-                    <h2>Название блога</h2>
-                    <div class="blog-time">
-                        <span class="date">Дата</span>
-                        <span>|</span>
-                        <span class="category">Категория</span>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                    </p>
-                </div>
-            </a>
-            <div class="divider"></div>
-            <a class="blog-href" href="">
-                <div class="blog-content">
-                    <h2>Название блога</h2>
-                    <div class="blog-time">
-                        <span class="date">Дата</span>
-                        <span>|</span>
-                        <span class="category">Категория</span>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                    </p>
-                </div>
-            </a>
-            <div class="divider"></div>
-            <a class="blog-href" href="">
-                <div class="blog-content">
-                    <h2>Название блога</h2>
-                    <div class="blog-time">
-                        <span class="date">Дата</span>
-                        <span>|</span>
-                        <span class="category">Категория</span>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                    </p>
-                </div>
-            </a>
-        </div>
     </div>
+</header>
 
-    <div class="media">
-        <div class="social-media">
-            <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
-            <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
-            <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
-        </div>
-        <p class="license">Лицензия</p>
+<div class="container">
+    <div class="divider-nav"></div>
+    <div>
+        <h1>Блог</h1>
+        <a class="blog-href" href="">
+            <div class="blog-content">
+                <h2>Название блога</h2>
+                <div class="blog-time">
+                    <span class="date">Дата</span>
+                    <span>|</span>
+                    <span class="category">Категория</span>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+                </p>
+            </div>
+        </a>
+        <div class="divider"></div>
+        <a class="blog-href" href="">
+            <div class="blog-content">
+                <h2>Название блога</h2>
+                <div class="blog-time">
+                    <span class="date">Дата</span>
+                    <span>|</span>
+                    <span class="category">Категория</span>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+                </p>
+            </div>
+        </a>
+        <div class="divider"></div>
+        <a class="blog-href" href="">
+            <div class="blog-content">
+                <h2>Название блога</h2>
+                <div class="blog-time">
+                    <span class="date">Дата</span>
+                    <span>|</span>
+                    <span class="category">Категория</span>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+                </p>
+            </div>
+        </a>
     </div>
+</div>
 
+<div class="modal" id="feedbackModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Обратная связь</h2>
+        <form id="feedbackForm" action="#" method="POST">
+            <div class="contact-form">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message" id="phoneError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
+            <button type="submit" id="submitBtn" class="contact-form-btn">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<div class="media">
+    <div class="social-media">
+        <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
+        <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
+        <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
+    </div>
+    <p class="license">Лицензия</p>
+</div>
+
+<script src="scriptBlog.js"></script>
 </body>
 </html>

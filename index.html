@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,7 @@
     <link rel="icon" href="img/avatar.webp" type="image/webp">
 </head>
 <body>
+<header id="header">
     <div class="container">
         <nav>
             <div class="nav-logo">
@@ -27,110 +28,180 @@
             <div class="nav-pages">
                 <a href="blog.html">Блог</a>
                 <a href="AboutMyself.html">Обо мне</a>
+                <a href="#" id="openFeedbackBtn">Контакты</a>
             </div>
         </nav>
         <div class="divider-nav"></div>
-        <div class="name">
-            <div>
-                <h1>Привет,&nbsp;меня&nbsp;зовут [Имя]
+    </div>
+</header>
+
+<div class="container">
+    <div class="name">
+        <div>
+            <h1>Привет,&nbsp;меня&nbsp;зовут [Имя]
                 <br>Я начинающий программист</h1>
-                <p>
-                    Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования
-                    <a class="continue-read" href="AboutMyself.html">...</a>
-                </p>
-                <button class="resume-btn">Прочитать резюме</button>
-            </div>
-            <img class="name-image" src="img/avatar.webp" alt="avatar">
+            <p>
+                Я учусь в лучшем вузе страны и хочу стать профессионалом в области программирования
+                <a class="continue-read" href="AboutMyself.html">...</a>
+            </p>
+            <button class="resume-btn">Прочитать резюме</button>
+        </div>
+        <img class="name-image" src="img/avatar.webp" alt="avatar">
+    </div>
+</div>
+
+<div class="container">
+    <h2>Недавние посты <a class="all-posts" href="">Все посты</a></h2>
+
+    <div class="posts">
+        <a class="post" href="#">
+            <h3>Пост 1</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
+        </a>
+
+        <a class="post" href="#">
+            <h3>Пост 2</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit .
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
+        </a>
+    </div>
+</div>
+
+<div class="container" id="gallery">
+    <h2>Галерея работ</h2>
+    <div class="gallery">
+        <div class="gallery-item" data-id="1">
+            <img src="img/feature-work-1.webp" alt="Проект 1">
+            <div class="gallery-item-title">Проект 1</div>
+        </div>
+        <div class="gallery-item" data-id="2">
+            <img src="img/feature-work-2.webp" alt="Проект 2">
+            <div class="gallery-item-title">Проект 2</div>
+        </div>
+        <div class="gallery-item" data-id="3">
+            <img src="img/feature-work-3.webp" alt="Проект 3">
+            <div class="gallery-item-title">Проект 3</div>
+        </div>
+        <div class="gallery-item" data-id="4">
+            <img src="img/feature-work-1.webp" alt="Проект 4">
+            <div class="gallery-item-title">Проект 4</div>
+        </div>
+        <div class="gallery-item" data-id="5">
+            <img src="img/feature-work-2.webp" alt="Проект 5">
+            <div class="gallery-item-title">Проект 5</div>
+        </div>
+        <div class="gallery-item" data-id="6">
+            <img src="img/feature-work-3.webp" alt="Проект 6">
+            <div class="gallery-item-title">Проект 6</div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <h2>Недавние посты <a class="all-posts" href="">Все посты</a></h2>
+<div class="container">
+    <h2>Предстоящие работы</h2>
 
-        <div class="posts">
-            <a class="post" href="#">
-                <h3>Пост 1</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-            </a>
-
-            <a class="post" href="#">
-                <h3>Пост 2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-            </a>
+    <a class="feature-work" href="">
+        <img class="feature-work-img" src="img/feature-work-1.webp" alt="feature work 1">
+        <div class="feature-work-content">
+            <h3>Предстоящая работа 1</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
         </div>
-    </div>
+    </a>
 
-    <div class="container">
-        <h2>Предстоящие работы</h2>
+    <a class="feature-work" href="">
+        <img class="feature-work-img" src="img/feature-work-2.webp" alt="feature work 2">
+        <div class="feature-work-content">
+            <h3>Предстоящая работа 2</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
+        </div>
+    </a>
 
-        <a class="feature-work" href="">
+    <a class="feature-work" href="">
+        <img class="feature-work-img" src="img/feature-work-3.webp" alt="feature work 3">
+        <div class="feature-work-content">
+            <h3>Предстоящая работа 3</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
+            </p>
+        </div>
+    </a>
+</div>
 
-            <img class="feature-work-img" src="img/feature-work-1.webp" alt="feature work 1">
-
-            <div class="feature-work-content">
-                <h3>Предстоящая работа 1</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-            </div>
-        </a>
-
-        <a class="feature-work" href="">
-            <img class="feature-work-img" src="img/feature-work-2.webp" alt="feature work 2">
-            <div class="feature-work-content">
-                <h3>Предстоящая работа 2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-            </div>
-        </a>
-
-        <a class="feature-work" href="">
-            <img class="feature-work-img" src="img/feature-work-3.webp" alt="feature work 3">
-            <div class="feature-work-content">
-                <h3>Предстоящая работа 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.
-                </p>
-            </div>
-        </a>
-    </div>
-
-    <div class="container">
+<div class="modal" id="feedbackModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <h2>Обратная связь</h2>
-        <form action="#" method="POST">
+        <form id="feedbackForm" action="#" method="POST">
             <div class="contact-form">
                 <label for="name">ФИО</label>
                 <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
             </div>
             <div class="contact-form">
                 <label for="email">Почта</label>
                 <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="contact-form">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="error-message" id="phoneError"></span>
             </div>
             <div class="contact-form">
                 <label for="message">Сообщение</label>
                 <textarea id="message" name="message" required></textarea>
+                <span class="error-message" id="messageError"></span>
             </div>
-            <button type="submit" class="contact-form-btn">Отправить</button>
+            <button type="submit" id="submitBtn" class="contact-form-btn">Отправить</button>
         </form>
     </div>
+</div>
 
-    <div class="media">
-        <div class="social-media">
-            <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
-            <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
-            <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
-        </div>
-        <p class="license">Лицензия</p>
+<div class="media">
+    <div class="social-media">
+        <a href="https://github.com/"><img class="media" src="img/github.webp" alt="github"></a>
+        <a href="https://www.instagram.com/"><img class="media" src="img/instagram.webp" alt="instagram"></a>
+        <a href="https://x.com/"><img class="media" src="img/twitter.webp" alt="twitter"></a>
     </div>
+    <p class="license">Лицензия</p>
+</div>
+
+<div class="modal" id="galleryModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-gallery">
+            <button class="nav-btn prev" id="prevBtn">&lt;</button>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="Gallery Image">
+                <div id="modalTitle" class="modal-title"></div>
+            </div>
+            <button class="nav-btn next" id="nextBtn">&gt;</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="timedPopup">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Сообщение по истечении 30 секунд</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl.</p>
+        <button class="resume-btn" id="closeTimedPopup">Закрыть</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
