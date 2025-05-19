@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // галерея + попап
-  let currentImageIndex = 0
+  let currentImageIndex = 0;
   const totalImages = galleryItems.length
 
   galleryItems.forEach((item, index) => {
