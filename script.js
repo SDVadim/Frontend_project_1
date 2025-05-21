@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // элементы DOM
-  const header = document.getElementById("header")
-  const feedbackModal = document.getElementById("feedbackModal")
-  const openFeedbackBtn = document.getElementById("openFeedbackBtn")
   const galleryItems = document.querySelectorAll(".gallery-item")
   const galleryModal = document.getElementById("galleryModal")
   const modalImage = document.getElementById("modalImage")
@@ -15,12 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const timedPopup = document.getElementById("timedPopup")
   const closeButtons = document.querySelectorAll(".close")
   const closeTimedPopupBtn = document.getElementById("closeTimedPopup")
-
-
-  // галерея + попап
-  let currentImageIndex = 0;
+  const openFeedbackBtn = document.getElementById("openFeedbackBtn")
+  const feedbackModal = document.getElementById("feedbackModal")
+  const nameInput = document.getElementById("name")
+  const emailInput = document.getElementById("email")
+  const phoneInput = document.getElementById("phone")
+  const messageInput = document.getElementById("message")
+  let currentImageIndex = 0
   const totalImages = galleryItems.length
 
+
+  // попап галереи
   galleryItems.forEach((item, index) => {
     item.addEventListener("click", () => {
       currentImageIndex = index
@@ -60,94 +62,198 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.classList.toggle("hidden", currentImageIndex === totalImages - 1)
   }
 
-
   // форма обратной связи
-  openFeedbackBtn.addEventListener("click", (e) => {
-    e.preventDefault()
-    openModal(feedbackModal)
-  })
+  if (openFeedbackBtn) {
+    openFeedbackBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      openModal(feedbackModal)
+    })
+  }
 
-  feedbackForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-
-    document.querySelectorAll(".error-message").forEach((el) => (el.textContent = ""))
-
-    const name = document.getElementById("name").value
-    const email = document.getElementById("email").value
-    const phone = document.getElementById("phone").value
-    const message = document.getElementById("message").value
-
-    let isValid = true
-
-    if (!/^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(name)) {
+  function validateName(value) {
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s]+$/.test(value)) {
       document.getElementById("nameError").textContent = "Имя должно содержать только русские или английские буквы"
-      isValid = false
+      nameInput.classList.add("invalid")
+      nameInput.classList.remove("valid")
+      return false
+    } else {
+      document.getElementById("nameError").textContent = ""
+      nameInput.classList.remove("invalid")
+      nameInput.classList.add("valid")
+      return true
     }
+  }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  function validateEmail(value) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       document.getElementById("emailError").textContent = "Пожалуйста, введите корректный email адрес"
-      isValid = false
+      emailInput.classList.add("invalid")
+      emailInput.classList.remove("valid")
+      return false
+    } else {
+      document.getElementById("emailError").textContent = ""
+      emailInput.classList.remove("invalid")
+      emailInput.classList.add("valid")
+      return true
     }
+  }
 
-    if (!/^\+?[0-9\s\-$$$$]{10,20}$/.test(phone)) {
+  function validatePhone(value) {
+    if (!/^\+?[0-9\s\-$$$$]{10,12}$/.test(value)) {
       document.getElementById("phoneError").textContent = "Пожалуйста, введите корректный номер телефона"
-      isValid = false
+      phoneInput.classList.add("invalid")
+      phoneInput.classList.remove("valid")
+      return false
+    } else {
+      document.getElementById("phoneError").textContent = ""
+      phoneInput.classList.remove("invalid")
+      phoneInput.classList.add("valid")
+      return true
     }
+  }
 
-    if (message.trim() === "") {
+  function validateMessage(value) {
+    if (value.trim() === "") {
       document.getElementById("messageError").textContent = "Пожалуйста, введите ваше сообщение"
-      isValid = false
+      messageInput.classList.add("invalid")
+      messageInput.classList.remove("valid")
+      return false
+    } else {
+      document.getElementById("messageError").textContent = ""
+      messageInput.classList.remove("invalid")
+      messageInput.classList.add("valid")
+      return true
     }
+  }
 
-    if (isValid) {
-      submitBtn.textContent = "Отправляем..."
-      submitBtn.classList.add("sending")
-      submitBtn.disabled = true
+  if (nameInput) {
+    nameInput.addEventListener("input", () => validateName(nameInput.value))
+    nameInput.addEventListener("blur", () => validateName(nameInput.value))
+  }
 
-      setTimeout(() => {
-        console.log("Данные формы:", { name, email, phone, message })
-        submitBtn.textContent = "Успешно отправлено!"
-        submitBtn.classList.remove("sending")
-        submitBtn.classList.add("success")
-        setTimeout(() => {closeModal(feedbackModal)}, 3000)
-      }, 2000)
+  if (emailInput) {
+    emailInput.addEventListener("input", () => validateEmail(emailInput.value))
+    emailInput.addEventListener("blur", () => validateEmail(emailInput.value))
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => validatePhone(phoneInput.value))
+    phoneInput.addEventListener("blur", () => validatePhone(phoneInput.value))
+  }
+
+  if (messageInput) {
+    messageInput.addEventListener("input", () => validateMessage(messageInput.value))
+    messageInput.addEventListener("blur", () => validateMessage(messageInput.value))
+  }
+
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      const name = nameInput.value
+      const email = emailInput.value
+      const phone = phoneInput.value
+      const message = messageInput.value
+      const isNameValid = validateName(name)
+      const isEmailValid = validateEmail(email)
+      const isPhoneValid = validatePhone(phone)
+      const isMessageValid = validateMessage(message)
+      if (isNameValid && isEmailValid && isPhoneValid && isMessageValid) {
+        submitBtn.textContent = "Отправляем..."
+        submitBtn.classList.add("sending")
+        submitBtn.disabled = true
+        setTimeout(() => {
+          console.log("Данные формы:", { name, email, phone, message })
+          submitBtn.textContent = "Успешно отправлено!"
+          submitBtn.classList.remove("sending")
+          submitBtn.classList.add("success")
+          setTimeout(() => {
+            feedbackForm.reset()
+            submitBtn.textContent = "Отправить"
+            submitBtn.classList.remove("success")
+            submitBtn.disabled = false
+            document.querySelectorAll(".error-message").forEach((el) => (el.textContent = ""))
+            nameInput.classList.remove("valid", "invalid")
+            emailInput.classList.remove("valid", "invalid")
+            phoneInput.classList.remove("valid", "invalid")
+            messageInput.classList.remove("valid", "invalid")
+            closeModal(feedbackModal)
+          }, 3000)
+        }, 2000)
+      }
+    })
+  }
+
+  // всплывающее окно
+  function shouldShowTimedPopup() {
+    const popupData = JSON.parse(localStorage.getItem("timedPopupData") || "{}")
+    if (!popupData.firstVisit) {
+      popupData.firstVisit = new Date().toISOString()
+      localStorage.setItem("timedPopupData", JSON.stringify(popupData))
+      return true
     }
-  })
+    const firstVisitDate = new Date(popupData.firstVisit)
+    const currentDate = new Date()
+    const timeDifference = currentDate - firstVisitDate
+    const tenDaysInMs = 10 * 24 * 60 * 60 * 1000
+    if (timeDifference > tenDaysInMs) {
+      return false
+    }
+    return true
+  }
 
-  // сообщение по истечении 30 секунд
-  let hasClosedTimedPopup = localStorage.getItem("hasClosedTimedPopup") === "true"
-
-  if (!hasClosedTimedPopup) {
-    console.log("Показать всплывающее окно через 3 секунды")
+  if (timedPopup && shouldShowTimedPopup()) {
     setTimeout(() => {
       openModal(timedPopup)
     }, 30000)
   }
 
-  closeTimedPopupBtn.addEventListener("click", () => {
-    closeModal(timedPopup)
-    localStorage.setItem("hasClosedTimedPopup", "true")
-    hasClosedTimedPopup = true
-  })
-
+  if (closeTimedPopupBtn) {
+    closeTimedPopupBtn.addEventListener("click", () => {
+      closeModal(timedPopup)
+    })
+  }
 
   // зафиксированный header
+  const header = document.getElementById("header")
+  const mediaContainer = document.querySelector(".media")
   const headerPlaceholder = document.createElement("div")
   headerPlaceholder.className = "header-placeholder"
   document.body.insertBefore(headerPlaceholder, header.nextSibling)
 
-  const headerHeight = header.offsetHeight
-  headerPlaceholder.style.height = headerHeight + "px"
+  function updateFixedHeader() {
+    if (header.classList.contains("fixed")) {
+      const mediaWidth = mediaContainer.offsetWidth
+      const galleryRect = mediaContainer.getBoundingClientRect()
+      const galleryLeft = galleryRect.left + window.scrollX
+      header.style.width = `${mediaWidth}px`
+      header.style.left = `${galleryLeft}px`
+      header.style.right = "auto"
+      header.style.margin = "0"
+      headerPlaceholder.style.height = `${header.offsetHeight}px`
+    }
+  }
 
   window.addEventListener("scroll", () => {
     const firstScreenHeight = window.innerHeight
-
     if (window.scrollY > firstScreenHeight) {
-      header.classList.add("fixed")
-      headerPlaceholder.style.display = "block"
+      if (!header.classList.contains("fixed")) {
+        header.classList.add("fixed")
+        headerPlaceholder.style.display = "block"
+      }
+      updateFixedHeader()
     } else {
       header.classList.remove("fixed")
       headerPlaceholder.style.display = "none"
+      header.style.width = ""
+      header.style.left = ""
+      header.style.right = ""
+      header.style.margin = ""
+    }
+  })
+
+  window.addEventListener("resize", () => {
+    if (header.classList.contains("fixed")) {
+      updateFixedHeader()
     }
   })
 
